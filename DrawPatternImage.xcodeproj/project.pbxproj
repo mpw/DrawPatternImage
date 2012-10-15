@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0BD18F162C8336002850A3 /* MPWCGDrawingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BD18D162C8336002850A3 /* MPWCGDrawingContext.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1F0BD194162C8492002850A3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0BD193162C8492002850A3 /* CoreText.framework */; };
+		1F0BD197162C84F7002850A3 /* MPWView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BD196162C84F7002850A3 /* MPWView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4DFE2423161289C30008E13F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE2422161289C30008E13F /* UIKit.framework */; };
 		4DFE2425161289C30008E13F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE2424161289C30008E13F /* Foundation.framework */; };
 		4DFE2427161289C30008E13F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFE2426161289C30008E13F /* CoreGraphics.framework */; };
@@ -21,6 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F0BD18C162C8336002850A3 /* MPWCGDrawingContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWCGDrawingContext.h; sourceTree = "<group>"; };
+		1F0BD18D162C8336002850A3 /* MPWCGDrawingContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPWCGDrawingContext.m; sourceTree = "<group>"; };
+		1F0BD18E162C8336002850A3 /* QuartzGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzGeometry.h; sourceTree = "<group>"; };
+		1F0BD190162C83AC002850A3 /* PhoneGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneGeometry.h; sourceTree = "<group>"; };
+		1F0BD191162C83D6002850A3 /* MPWDrawingContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPWDrawingContext.h; sourceTree = "<group>"; };
+		1F0BD192162C8401002850A3 /* AccessorMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessorMacros.h; sourceTree = "<group>"; };
+		1F0BD193162C8492002850A3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1F0BD195162C84F7002850A3 /* MPWView_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWView_iOS.h; sourceTree = "<group>"; };
+		1F0BD196162C84F7002850A3 /* MPWView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPWView.m; sourceTree = "<group>"; };
 		4DFE241E161289C30008E13F /* DrawPatternImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawPatternImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFE2422161289C30008E13F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DFE2424161289C30008E13F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0BD194162C8492002850A3 /* CoreText.framework in Frameworks */,
 				4DFE2423161289C30008E13F /* UIKit.framework in Frameworks */,
 				4DFE2425161289C30008E13F /* Foundation.framework in Frameworks */,
 				4DFE2427161289C30008E13F /* CoreGraphics.framework in Frameworks */,
@@ -53,9 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0BD18A162C82EC002850A3 /* MPWDrawingContext */ = {
+			isa = PBXGroup;
+			children = (
+				1F0BD192162C8401002850A3 /* AccessorMacros.h */,
+				1F0BD191162C83D6002850A3 /* MPWDrawingContext.h */,
+				1F0BD190162C83AC002850A3 /* PhoneGeometry.h */,
+				1F0BD18C162C8336002850A3 /* MPWCGDrawingContext.h */,
+				1F0BD18D162C8336002850A3 /* MPWCGDrawingContext.m */,
+				1F0BD18E162C8336002850A3 /* QuartzGeometry.h */,
+				1F0BD195162C84F7002850A3 /* MPWView_iOS.h */,
+				1F0BD196162C84F7002850A3 /* MPWView.m */,
+			);
+			name = MPWDrawingContext;
+			sourceTree = "<group>";
+		};
 		4DFE2413161289C30008E13F = {
 			isa = PBXGroup;
 			children = (
+				1F0BD193162C8492002850A3 /* CoreText.framework */,
+				1F0BD18A162C82EC002850A3 /* MPWDrawingContext */,
 				4DFE2428161289C30008E13F /* DrawPatternImage */,
 				4DFE2421161289C30008E13F /* Frameworks */,
 				4DFE241F161289C30008E13F /* Products */,
@@ -176,6 +206,8 @@
 				4DFE242F161289C30008E13F /* main.m in Sources */,
 				4DFE2433161289C30008E13F /* AppDelegate.m in Sources */,
 				4DFE243C161289C30008E13F /* ViewController.m in Sources */,
+				1F0BD18F162C8336002850A3 /* MPWCGDrawingContext.m in Sources */,
+				1F0BD197162C84F7002850A3 /* MPWView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +323,7 @@
 				4DFE2444161289C30008E13F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

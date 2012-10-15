@@ -12,5 +12,5 @@
 #else
 #import <ApplicationServices/ApplicationServices.h>
 #endif
-#import <MPWFoundation/PhoneGeometry.h>
+#import "PhoneGeometry.h"
 

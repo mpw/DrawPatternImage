@@ -13,7 +13,7 @@
 #else
 #import "MPWView.h"
 #endif
-#import <EGOS_Cocoa/MPWCGDrawingContext.h>
+#import "MPWCGDrawingContext.h"
 
 @implementation MPWView
 

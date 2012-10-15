@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "MPWView_iOS.h"
+#import "MPWDrawingContext.h"
 
 @interface ViewController ()
 
@@ -203,7 +205,7 @@ CGContextRef CreateBitmapContext(int width, int height, CGColorSpaceRef colorSpa
     return image;
 }
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewDidAppear_old:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
@@ -233,6 +235,40 @@ CGContextRef CreateBitmapContext(int width, int height, CGColorSpaceRef colorSpa
     [self.view addSubview:imageView];
 
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSRect r=[[self view] frame];
+    MPWView *patternView = [[MPWView alloc] initWithFrame:r];
+    [patternView setDrawingBlock:^(id <MPWDrawingContext> context){
+        NSSize patternSize=NSMakeSize(16,16);
+        id diamond = [context laterWithSize:patternSize content:^(id <MPWDrawingContext> context){
+            [context setFillColor:[context colorRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
+            [[context moveto:patternSize.width/2 :2] lineto:patternSize.width-2 :patternSize.height/2 ];
+            [[context lineto:patternSize.width/2 :patternSize.height-2] lineto:2 :patternSize.height/2];
+            [[context closepath] fill];
+        }];
+        [context setFillColor:diamond];
+        [[context nsrect:r] fill];
+        [context setFillColor:[context colorRed:0.2 green:1.0 blue:0.3 alpha:1.0]];
+        NSPoint centerPoint = NSMakePoint(r.size.width/2, 150);
+        [context arcWithCenter:centerPoint  radius:50 startDegrees:0 endDegrees:360  clockwise:YES];
+        [context arcWithCenter:centerPoint  radius:100 startDegrees:0 endDegrees:360  clockwise:NO];
+        [context eofill];
+        [context translate: 0 : 250];
+        [context arcWithCenter:centerPoint  radius:100 startDegrees:0 endDegrees:360  clockwise:NO];
+        [context fill];
+        [context setFillColor:[context colorGray: 1.0 alpha:1.0]];
+        [context arcWithCenter:centerPoint  radius:50 startDegrees:0 endDegrees:360  clockwise:NO];
+        [context fill];
+
+        
+
+    }];
+    [[self view] addSubview:patternView];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

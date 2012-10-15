@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 #import <UIKit/UIKit.h>
-#import <EGOS/MPWDrawingContext.h>
+#import "MPWDrawingContext.h"
 
 
 @interface MPWView : UIView {

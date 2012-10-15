@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "QuartzGeometry.h"
-#import <EGOS/MPWDrawingContext.h>
+#import "MPWDrawingContext.h"
 
-#import <MPWFoundation/AccessorMacros.h>
+#import "AccessorMacros.h"
 
 @interface MPWCGDrawingContext: NSObject <MPWDrawingContext> {
 	CGContextRef context;
@@ -25,7 +25,6 @@ scalarAccessor_h( CGContextRef, context, setContext )
 
 -(void)resetTextMatrix;
 
--image;
 
 #if !TARGET_OS_IPHONE
 -concatNSAffineTransform:(NSAffineTransform*)transform;
@@ -63,6 +62,6 @@ scalarAccessor_h( CGContextRef, context, setContext )
 
 +rgbBitmapContext:(NSSize)size;
 +cmykBitmapContext:(NSSize)size;
-
+-image;
 
 @end

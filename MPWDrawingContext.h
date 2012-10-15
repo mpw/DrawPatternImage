@@ -6,7 +6,7 @@
 //  Copyright 2010 Marcel Weiher. All rights reserved.
 //
 
-#import <MPWFoundation/PhoneGeometry.h>
+#import "PhoneGeometry.h"
 
 
 @protocol MPWDrawingContext <NSObject>

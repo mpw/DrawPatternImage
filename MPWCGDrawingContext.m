@@ -833,7 +833,7 @@ void ColoredPatternCallback(void *info, CGContextRef context)
 
 -(void)dealloc
 {
-    [block release];
+//    [block release];
     [super dealloc];
 }
 
@@ -954,12 +954,11 @@ void ColoredPatternCallback(void *info, CGContextRef context)
 
 -(CGColorRef)CGColor
 {
-    return [[UIColor colorWithPatternImage:self] CGColor]
+    return [[UIColor colorWithPatternImage:self] CGColor];
 }
+@end
 
-#endif
-
-#if TARGET_OS_MAC
+#elif TARGET_OS_MAC
 
 @implementation NSImage(CGColor)
 
